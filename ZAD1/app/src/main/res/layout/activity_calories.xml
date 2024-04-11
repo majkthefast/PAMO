@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CaloriesActivity">
+
+    <EditText
+        android:id="@+id/weightInputCalories"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Waga (kg)"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="32dp"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <EditText
+        android:id="@+id/heightInputCalories"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Wzrost (cm)"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@id/weightInputCalories"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/ageInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Wiek"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/heightInputCalories"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <Spinner
+        android:id="@+id/palSpinner"
+        android:layout_width="394dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ageInput" />
+
+
+    <RadioGroup
+        android:id="@+id/genderRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/palSpinner">
+
+        <RadioButton
+            android:id="@+id/radioMale"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Mężczyzna" />
+
+        <RadioButton
+            android:id="@+id/radioFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kobieta" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/calculateCaloriesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Oblicz"
+        app:layout_constraintTop_toBottomOf="@id/genderRadioGroup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:id="@+id/caloriesResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zapotrzebowanie kaloryczne"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/calculateCaloriesButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <Button
+        android:id="@+id/goToBmiCalculatorButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:text="Kalkulator BMI"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/caloriesResult" />
+
+    <Button
+        android:id="@+id/goToRecipesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Przepisy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goToBmiCalculatorButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

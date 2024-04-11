@@ -1,6 +1,8 @@
 package com.example.bmicalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +31,22 @@ public class MainActivity extends AppCompatActivity {
                 calculateBMI();
             }
         });
+        Button goToCaloriesCalculatorButton = findViewById(R.id.goToCaloriesCalculatorButton);
+        goToCaloriesCalculatorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CaloriesActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button goToRecipesButton = findViewById(R.id.goToRecipesButton);
+        goToRecipesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RecipeActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void calculateBMI() {
@@ -45,4 +63,5 @@ public class MainActivity extends AppCompatActivity {
             bmiResult.setText("Proszę wprowadzić masę i wzrost.");
         }
     }
+
 }
