@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">BMI Calculator</string>
+    <string name="masa_kg">Masa (kg)</string>
+    <string name="wzrost_cm">Wzrost (cm)</string>
+    <string name="oblicz">Oblicz</string>
+    <string name="bmi">BMI</string>
+    <string name="kalkulator_kalorii">Kalkulator Kalorii</string>
+    <string name="przepisy">Przepisy</string>
     <string-array name="pal_values">
         <item>Niska aktywność (np. praca biurowa) - 1.2</item>
         <item>Umiarkowana aktywność (1-3 dni w tygodniu) - 1.375</item>

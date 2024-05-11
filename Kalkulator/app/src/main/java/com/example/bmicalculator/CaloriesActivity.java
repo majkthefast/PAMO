@@ -3,13 +3,13 @@ package com.example.bmicalculator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class CaloriesActivity extends AppCompatActivity {
@@ -40,13 +40,7 @@ public class CaloriesActivity extends AppCompatActivity {
         femaleButton = findViewById(R.id.radioFemale);
         caloriesResult = findViewById(R.id.caloriesResult);
 
-        findViewById(R.id.calculateCaloriesButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                calculateCalories();
-            }
-
-        });
+        findViewById(R.id.calculateCaloriesButton).setOnClickListener(v -> calculateCalories());
 
         Spinner palSpinner = findViewById(R.id.palSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -56,20 +50,14 @@ public class CaloriesActivity extends AppCompatActivity {
 
 
         Button goToBmiCalculatorButton = findViewById(R.id.goToBmiCalculatorButton);
-        goToBmiCalculatorButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(CaloriesActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
+        goToBmiCalculatorButton.setOnClickListener(v -> {
+            Intent intent = new Intent(CaloriesActivity.this, MainActivity.class);
+            startActivity(intent);
         });
         Button goToRecipesButton = findViewById(R.id.goToRecipesButton);
-        goToRecipesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(CaloriesActivity.this, RecipeActivity.class);
-                startActivity(intent);
-            }
+        goToRecipesButton.setOnClickListener(v -> {
+            Intent intent = new Intent(CaloriesActivity.this, RecipeActivity.class);
+            startActivity(intent);
         });
     }
 
